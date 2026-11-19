@@ -1,0 +1,41 @@
+OUTPUT SOAL 1 - PERCOBAAN FUNGSI, IF-ELSE, CLASS
+(.venv) PS C:\Users\sahla\Documents\TUGAS KULIAH SEM 3\PLP\TUGAS_PLP_085> python tugas1-3\t1.py                                                           
+Kode:
+def sapa(nama):
+    return nama
+
+Pohon (eksekusi):
+(module (function_definition name: (identifier) parameters: (parameters (identifier)) body: (block (return_statement (identifier)))))
+--------------------------------------------------
+Kode:
+if x > 0:
+    y = 1
+else:
+    y = 0
+
+Pohon (eksekusi):
+(module (if_statement condition: (comparison_operator (identifier) (integer)) consequence: (block (expression_statement (assignment left: (identifier) right: (integer)))) alternative: (else_clause body: (block (expression_statement (assignment left: (identifier) right: (integer)))))))
+--------------------------------------------------
+Kode:
+class Akun:
+    def saldo(self):
+        return 0
+
+Pohon (eksekusi):
+(module (class_definition name: (identifier) body: (block (function_definition name: (identifier) parameters: (parameters (identifier)) body: (block (return_statement (integer)))))))
+--------------------------------------------------
+
+OUTPUT SOAL 1 - NODE ANONIM & BERNAMA
+=== Anak langsung dari function_definition ===
+def anonim
+identifier bernama
+parameters bernama
+  -> ( anonim
+  -> identifier bernama
+  -> ) anonim
+: anonim
+block bernama
+
+OUTPUT SOAL 1 - PERCOBAAN KODE RUSAK
+=== Kode rusak (tanpa ':') ===
+(module (ERROR (identifier) (parameters (identifier)) (identifier)))
