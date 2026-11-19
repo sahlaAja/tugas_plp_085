@@ -1,0 +1,20 @@
+﻿==================
+and lebih kuat dari or
+==================
+
+status = "open" or priority > 2 and owner = "budi"
+
+---
+
+(query
+  (or_expression
+    left: (comparison
+      field: (identifier)
+      value: (string))
+    right: (and_expression
+      left: (comparison
+        field: (identifier)
+        value: (number))
+      right: (comparison
+        field: (identifier)
+        value: (string)))))
