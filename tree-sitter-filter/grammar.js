@@ -4,7 +4,8 @@ export default grammar({
   extras: $ => [/\s/],
   rules: {
     query: $ => $._expr,
-    _expr: $ => choice($.comparison, $.and_expression, $.or_expression),
+    _expr: $ => choice($.comparison, $.and_expression, $.or_expression, $.parenthesized),
+    parenthesized: $ => seq('(', $._expr, ')'),
     and_expression: $ => prec.left(2,seq($._expr, 'and', $._expr)), 
     or_expression: $ => prec.left(1, seq($._expr, 'or', $._expr)),
     comparison: $ => seq(
