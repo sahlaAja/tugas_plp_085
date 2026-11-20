@@ -93,3 +93,19 @@ not (a = 1 or b = "ok") and c >= 3
     (comparison
       (identifier)
       (number))))
+
+==================
+Operator in (tiga nilai) dan contains
+==================
+status in ("open", "pending", "closed") and title contains "invoice"
+---
+(query
+  (and_expression
+    (in_expression
+      (identifier)
+      (string)
+      (string)
+      (string))
+    (contains_expression
+      (identifier)
+      (string))))
