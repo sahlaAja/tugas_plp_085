@@ -1,0 +1,1 @@
+status = "open" and (score >= 80 or not archived) and active = true
