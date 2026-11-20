@@ -1,0 +1,9 @@
+==================
+Perbandingan angka
+==================
+priority >= 2
+---
+(query
+  (comparison
+    (identifier)
+    (number)))
