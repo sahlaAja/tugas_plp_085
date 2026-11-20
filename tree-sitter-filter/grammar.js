@@ -4,10 +4,11 @@ export default grammar({
   extras: $ => [/\s/],
   rules: {
     query: $ => $._expr,
-    _expr: $ => choice($.comparison, $.and_expression, $.or_expression, $.parenthesized),
-    parenthesized: $ => seq('(', $._expr, ')'),
+    _expr: $ => choice($.comparison, $.and_expression, $.or_expression, $.not_expression, $.parenthesized),
+    not_expression: $ => prec.right(3, seq('not', $._expr)),
     and_expression: $ => prec.left(2,seq($._expr, 'and', $._expr)), 
     or_expression: $ => prec.left(1, seq($._expr, 'or', $._expr)),
+    parenthesized: $ => seq('(', $._expr, ')'),
     comparison: $ => seq(
       $.identifier,
       choice('=', '!=', '>', '<', '>=', '<='), 
